@@ -9,6 +9,8 @@ app_color = "grey"
 app_email = "info@paralogic.io"
 app_license = "MIT"
 
+after_install = "erpnext_pk.install.after_install"
+
 # Includes in <head>
 # ------------------
 
