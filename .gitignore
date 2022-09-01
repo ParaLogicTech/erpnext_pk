@@ -4,3 +4,7 @@
 *.swp
 tags
 erpnext_pk/docs/current
+__pycache__
+.idea/
+.vscode/
+node_modules/
