@@ -63,9 +63,16 @@ def after_install():
 
 
 def make_custom_fields():
+	if not frappe.db.exists("DocType", "Employee"):
+		custom_fields.pop('Employee')
+
 	create_custom_fields(custom_fields)
 
 
 def apply_property_setters():
+	employee_doctype_exists = frappe.db.exists("DocType", "Employee")
 	for arg in property_setters:
+		if arg.get('doctype') == "Employee" and not employee_doctype_exists:
+			continue
+
 		frappe.make_property_setter(arg)
