@@ -35,7 +35,7 @@ custom_fields = {
 	# Doctype Employee Mods
 	'Employee': [
 		# CNIC field
-		{"label": "CNIC", "fieldname": "cnic", "fieldtype": "Data", "description": "Format: xxxxx-xxxxxxx-x" ,"insert_after": "date_of_joining"},
+		{"label": "CNIC", "fieldname": "cnic", "fieldtype": "Data", "insert_after": "date_of_joining"},
 		# CNIC Issue Date field
 		{"label": "CNIC Issue Date", "fieldname": "cnic_issue_date", "fieldtype": "Date", "insert_after": "cnic"},
 		# CNIC Expiry Datefield

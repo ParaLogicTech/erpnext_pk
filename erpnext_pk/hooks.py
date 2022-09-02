@@ -11,6 +11,16 @@ app_license = "MIT"
 
 after_install = "erpnext_pk.install.after_install"
 
+app_include_js = "/assets/js/erpnext_pk.min.js"
+
+doctype_js = {
+	"Customer" : "public/js/customer.js",
+	"Supplier" : "public/js/supplier.js",
+	"Employee" : "public/js/employee.js",
+	"Company" : "public/js/company.js"
+}
+
+
 # Includes in <head>
 # ------------------
 
