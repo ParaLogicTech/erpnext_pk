@@ -2,50 +2,70 @@ import frappe
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
 
 
+# Custom Field Templates
+def get_template_field(fieldname, insert_after):
+	df = custom_field_templates[fieldname].copy()
+	df['insert_after'] = insert_after
+	return df
 
+
+custom_field_templates = {
+	'tax_ntn': {"label": "NTN", "fieldname": "tax_ntn", "fieldtype": "Data", "in_standard_filter": 1},
+	'tax_strn': {"label": "STRN", "fieldname": "tax_strn", "fieldtype": "Data", "in_standard_filter": 1},
+	'tax_cnic': {"label": "CNIC", "fieldname": "tax_cnic", "fieldtype": "Data", "in_standard_filter": 1},
+}
+
+
+# Custom Field Definitions
 custom_fields = {
-	# Doctype Company Mods
 	'Company': [
-		# NTN field
-		{"label": "NTN", "fieldname": "tax_ntn", "fieldtype": "Data", "insert_after": "tax_id"},
-		# STRN field
-		{"label": "STRN", "fieldname": "tax_strn", "fieldtype": "Data", "insert_after": "tax_ntn"}
+		get_template_field('tax_ntn', insert_after='tax_id'),
+		get_template_field('tax_strn', insert_after='tax_ntn'),
+		get_template_field('tax_cnic', insert_after='tax_strn'),
 	],
 
-	# Doctype Customer Mods
 	'Customer': [
-		# NTN field
-		{"label": "NTN", "fieldname": "tax_ntn", "fieldtype": "Data", "insert_after": "tax_category"},
-		# CNIC field
-		{"label": "CNIC", "fieldname": "tax_cnic", "fieldtype": "Data", "insert_after": "tax_ntn"},
-		# STRN field
-		{"label": "STRN", "fieldname": "tax_strn", "fieldtype": "Data", "insert_after": "tax_cnic"}
+		get_template_field('tax_cnic', insert_after='tax_id'),
+		get_template_field('tax_ntn', insert_after='tax_cnic'),
+		get_template_field('tax_strn', insert_after='tax_ntn'),
 	],
 
-	# Doctype Supplier Mods
 	'Supplier': [
-		# NTN field
-		{"label": "NTN", "fieldname": "tax_ntn", "fieldtype": "Data", "insert_after": "pan"},
-		# CNIC field
-		{"label": "CNIC", "fieldname": "tax_cnic", "fieldtype": "Data", "insert_after": "tax_ntn"},
-		# STRN field
-		{"label": "STRN", "fieldname": "tax_strn", "fieldtype": "Data", "insert_after": "tax_cnic"}
+		get_template_field('tax_cnic', insert_after='pan'),
+		get_template_field('tax_ntn', insert_after='tax_cnic'),
+		get_template_field('tax_strn', insert_after='tax_ntn'),
 	],
 
-	# Doctype Employee Mods
 	'Employee': [
-		# CNIC field
-		{"label": "CNIC", "fieldname": "cnic", "fieldtype": "Data", "insert_after": "date_of_joining"},
-		# CNIC Issue Date field
-		{"label": "CNIC Issue Date", "fieldname": "cnic_issue_date", "fieldtype": "Date", "insert_after": "cnic"},
-		# CNIC Expiry Datefield
-		{"label": "CNIC Expiry Date", "fieldname": "cnic_expiry_date", "fieldtype": "Date", "insert_after": "cnic_issue_date"}
+		{"label": "National ID Card Detail", "fieldname": "sec_nic_details", "fieldtype": "Section Break",
+			"insert_after": "health_details", "collapsible": 1},
+		get_template_field('tax_cnic', insert_after='sec_nic_details'),
+		{"fieldname": "col_break_nic1", "fieldtype": "Column Break", "insert_after": "tax_cnic"},
+		{"label": "CNIC Date of Issue", "fieldname": "cnic_date_of_issue", "fieldtype": "Date", "insert_after": "col_break_nic1"},
+		{"label": "", "fieldname": "col_break_nic2", "fieldtype": "Column Break", "insert_after": "cnic_date_of_issue"},
+		{"label": "CNIC Date of Expiry", "fieldname": "cnic_valid_upto", "fieldtype": "Date", "insert_after": "col_break_nic2"}
 	]
 }
 
+
+# Property Setters
+property_setters = [
+	{"doctype": "Employee", "fieldname": "date_of_issue", "property": "label", "value": "Passport Date of Issue"},
+	{"doctype": "Employee", "fieldname": "valid_upto", "property": "label", "value": "Passport Date of Expiry"},
+	{"doctype": "Employee", "fieldname": "place_of_issue", "property": "label", "value": "Passport Place of Issue"}
+]
+
+
+# Installer
 def after_install():
 	make_custom_fields()
+	apply_property_setters()
+
 
 def make_custom_fields():
 	create_custom_fields(custom_fields)
 
+
+def apply_property_setters():
+	for arg in property_setters:
+		frappe.make_property_setter(arg)

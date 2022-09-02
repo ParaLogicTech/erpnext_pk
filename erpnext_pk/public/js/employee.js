@@ -1,8 +1,8 @@
 frappe.ui.form.on('Employee', {
 	validate: function(frm) {
-		erpnext_pk.format_cnic(frm, 'cnic');
+		erpnext_pk.format_cnic(frm, 'tax_cnic');
 	},
-	cnic: function(frm) {
-		erpnext_pk.format_cnic(frm, 'cnic')
+	tax_cnic: function(frm) {
+		erpnext_pk.format_cnic(frm, 'tax_cnic')
 	},
 });
