@@ -21,6 +21,22 @@ doctype_js = {
 }
 
 
+doc_events = {
+	"Customer": {
+		"validate": "erpnext_pk.events.validate_ntn_cnic_strn_in_document",
+	},
+	"Supplier": {
+		"validate": "erpnext_pk.events.validate_ntn_cnic_strn_in_document",
+	},
+	"Company": {
+		"validate": "erpnext_pk.events.validate_ntn_cnic_strn_in_document",
+	},
+	"Employee": {
+		"validate": "erpnext_pk.events.validate_ntn_cnic_strn_in_document",
+	}
+}
+
+
 # Includes in <head>
 # ------------------
 
