@@ -37,12 +37,6 @@ custom_fields = {
 		get_template_field({"fieldname": 'tax_strn', 'insert_after': 'tax_ntn'})
 	],
 
-	'Quotation': [
-		get_template_field({"fieldname": 'tax_cnic', "insert_after": 'customer_name', "fetch_from": "party_name.tax_cnic", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_cnic', "fetch_from": "party_name.tax_ntn", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "party_name.tax_strn", "read_only": 1, "hidden": 1})
-	],
-
 	'Sales Order': [
 		get_template_field({"fieldname": 'tax_cnic', "insert_after": 'tax_id', "fetch_from": "customer.tax_cnic", "read_only": 1, "hidden": 1}),
 		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_cnic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
@@ -50,6 +44,18 @@ custom_fields = {
 	],
 
 	'Sales Invoice': [
+		get_template_field({"fieldname": 'tax_cnic', "insert_after": 'tax_id', "fetch_from": "customer.tax_cnic", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_cnic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "read_only": 1, "hidden": 1})
+	],
+
+	'Delivery Note': [
+		get_template_field({"fieldname": 'tax_cnic', "insert_after": 'tax_id', "fetch_from": "customer.tax_cnic", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_cnic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "read_only": 1, "hidden": 1})
+	],
+
+	'POS Invoice': [
 		get_template_field({"fieldname": 'tax_cnic', "insert_after": 'tax_id', "fetch_from": "customer.tax_cnic", "read_only": 1, "hidden": 1}),
 		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_cnic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
 		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "read_only": 1, "hidden": 1})
