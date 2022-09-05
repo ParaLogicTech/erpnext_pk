@@ -3,9 +3,10 @@ from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
 
 
 # Custom Field Templates
-def get_template_field(fieldname, insert_after):
+def get_template_field(args):
+	fieldname = args['fieldname']
 	df = custom_field_templates[fieldname].copy()
-	df['insert_after'] = insert_after
+	df.update(args)
 	return df
 
 
@@ -19,32 +20,50 @@ custom_field_templates = {
 # Custom Field Definitions
 custom_fields = {
 	'Company': [
-		get_template_field('tax_ntn', insert_after='tax_id'),
-		get_template_field('tax_strn', insert_after='tax_ntn'),
-		get_template_field('tax_cnic', insert_after='tax_strn'),
+		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_id'}),
+		get_template_field({"fieldname": 'tax_strn', 'insert_after':'tax_ntn'}),
+		get_template_field({"fieldname": 'tax_cnic', 'insert_after': 'tax_strn'})
 	],
 
 	'Customer': [
-		get_template_field('tax_cnic', insert_after='tax_id'),
-		get_template_field('tax_ntn', insert_after='tax_cnic'),
-		get_template_field('tax_strn', insert_after='tax_ntn'),
+		get_template_field({"fieldname": 'tax_cnic', 'insert_after': 'tax_id'}),
+		get_template_field({"fieldname": 'tax_ntn', 'insert_after': 'tax_cnic'}),
+		get_template_field({"fieldname": 'tax_strn', 'insert_after': 'tax_ntn'})
 	],
 
 	'Supplier': [
-		get_template_field('tax_cnic', insert_after='pan'),
-		get_template_field('tax_ntn', insert_after='tax_cnic'),
-		get_template_field('tax_strn', insert_after='tax_ntn'),
+		get_template_field({"fieldname": 'tax_cnic', 'insert_after': 'pan'}),
+		get_template_field({"fieldname": 'tax_ntn', 'insert_after': 'tax_cnic'}),
+		get_template_field({"fieldname": 'tax_strn', 'insert_after': 'tax_ntn'})
+	],
+
+	'Quotation': [
+		get_template_field({"fieldname": 'tax_cnic', "insert_after": 'customer_name', "fetch_from": "party_name.tax_cnic", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_cnic', "fetch_from": "party_name.tax_ntn", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "party_name.tax_strn", "read_only": 1, "hidden": 1})
+	],
+
+	'Sales Order': [
+		get_template_field({"fieldname": 'tax_cnic', "insert_after": 'tax_id', "fetch_from": "customer.tax_cnic", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_cnic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "read_only": 1, "hidden": 1})
+	],
+
+	'Sales Invoice': [
+		get_template_field({"fieldname": 'tax_cnic', "insert_after": 'tax_id', "fetch_from": "customer.tax_cnic", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_cnic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
+		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "read_only": 1, "hidden": 1})
 	],
 
 	'Employee': [
 		{"label": "National ID Card Detail", "fieldname": "sec_nic_details", "fieldtype": "Section Break",
 			"insert_after": "health_details", "collapsible": 1},
-		get_template_field('tax_cnic', insert_after='sec_nic_details'),
+		get_template_field({"fieldname": 'tax_cnic', 'insert_after': 'sec_nic_details'}),
 		{"fieldname": "col_break_nic1", "fieldtype": "Column Break", "insert_after": "tax_cnic"},
 		{"label": "CNIC Date of Issue", "fieldname": "cnic_date_of_issue", "fieldtype": "Date", "insert_after": "col_break_nic1"},
 		{"label": "", "fieldname": "col_break_nic2", "fieldtype": "Column Break", "insert_after": "cnic_date_of_issue"},
 		{"label": "CNIC Date of Expiry", "fieldname": "cnic_valid_upto", "fieldtype": "Date", "insert_after": "col_break_nic2"}
-	]
+	],
 }
 
 
