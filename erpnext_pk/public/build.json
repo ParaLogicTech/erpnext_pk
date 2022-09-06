@@ -1,0 +1,5 @@
+{
+    "js/erpnext_pk.min.js": [
+        "public/js/utils.js"
+    ]
+}
