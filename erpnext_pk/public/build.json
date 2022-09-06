@@ -1,5 +1,7 @@
 {
     "js/erpnext_pk.min.js": [
-        "public/js/utils.js"
+        "public/js/utils.js",
+        "public/icons/erpnext_pk_icons.html",
+        "public/icons/icon.js"
     ]
 }
