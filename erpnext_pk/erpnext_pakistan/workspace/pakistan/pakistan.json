@@ -31,9 +31,26 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "FBR Sales Tax Report",
+   "link_to": "FBR Sales Tax Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2022-09-05 18:04:01.364741",
+ "modified": "2022-09-09 16:48:14.902137",
  "modified_by": "Administrator",
  "module": "ERPNext Pakistan",
  "name": "Pakistan",

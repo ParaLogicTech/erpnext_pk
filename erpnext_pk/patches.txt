@@ -1,1 +1,1 @@
-erpnext_pk.patches.reset_custom_fields
+erpnext_pk.patches.reset_custom_fields #0000000
