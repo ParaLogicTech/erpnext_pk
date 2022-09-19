@@ -53,13 +53,13 @@
    "hidden": 0,
    "is_query_report": 1,
    "label": "SRB Service Tax Report",
-   "link_to": "SRB service tax report",
+   "link_to": "SRB Service Tax Report",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2022-09-14 18:38:54.131807",
+ "modified": "2022-09-16 18:54:26.992562",
  "modified_by": "Administrator",
  "module": "ERPNext Pakistan",
  "name": "Pakistan",

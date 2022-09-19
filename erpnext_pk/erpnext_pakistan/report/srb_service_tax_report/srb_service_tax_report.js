@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 /* eslint-disable */
 
-frappe.query_reports["SRB service tax report"] = {
+frappe.query_reports["SRB Service Tax Report"] = {
 	"filters": [
 		{
 			"fieldname":"company",
@@ -40,6 +40,5 @@ frappe.query_reports["SRB service tax report"] = {
 			"fieldtype": "Check",
 			"default": 0
 		},
-
 	]
 };
