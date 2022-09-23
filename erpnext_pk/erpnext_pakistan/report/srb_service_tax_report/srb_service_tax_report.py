@@ -38,7 +38,7 @@ class SRBServiceTaxReport:
 				invoice.customer as buyer_name,
 				invoice.posting_date as document_date,
 				invoice.base_net_total as sale_total_excluding_tax,
-				invoice.tax_cnic,
+				invoice.tax_nic,
 				invoice.tax_ntn,
 				address.city as buyer_district
 			FROM
@@ -102,7 +102,7 @@ class SRBServiceTaxReport:
 			},
 			{
 				"label": _("CNIC"),
-				"fieldname": "tax_cnic",
+				"fieldname": "tax_nic",
 				"fieldtype": "Data",
 				"width": 140
 			},

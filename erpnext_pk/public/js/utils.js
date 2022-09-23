@@ -22,7 +22,7 @@ $.extend(erpnext_pk, {
 		}
 	},
 
-	get_formatted_cnic: function (value) {
+	get_formatted_nic: function (value) {
 		value = cstr(value).toUpperCase();
 		value = value.replace(/[^0-9]+/g, "");
 
@@ -37,10 +37,10 @@ $.extend(erpnext_pk, {
 		return value;
 	},
 
-	format_cnic: function(frm, fieldname) {
+	format_nic: function(frm, fieldname) {
 		let value = frm.doc[fieldname];
 		if (value) {
-			value = erpnext_pk.get_formatted_cnic(value);
+			value = erpnext_pk.get_formatted_nic(value);
 			frm.doc[fieldname] = value;
 			frm.refresh_field(fieldname);
 		}
