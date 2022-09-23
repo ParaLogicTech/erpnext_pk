@@ -26,15 +26,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Account",
-   "link_to": "Account",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Company",
    "link_to": "Company",
    "link_type": "DocType",
@@ -68,7 +59,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-23 17:44:40.843094",
+ "modified": "2022-09-23 18:22:29.558798",
  "modified_by": "Administrator",
  "module": "ERPNext Pakistan",
  "name": "Pakistan",
