@@ -4,8 +4,9 @@
 import frappe
 from frappe import _
 
+
 def validate_ntn_cnic_strn_in_document(doc, method):
-    validate_ntn_cnic_strn(doc.get('tax_ntn'), doc.get('tax_cnic'), doc.get('tax_strn'))
+	validate_ntn_cnic_strn(doc.get('tax_ntn'), doc.get('tax_cnic'), doc.get('tax_strn'))
 
 
 def validate_ntn_cnic_strn(ntn=None, cnic=None, strn=None):

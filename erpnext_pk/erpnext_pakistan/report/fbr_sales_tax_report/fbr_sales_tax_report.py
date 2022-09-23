@@ -34,13 +34,11 @@ class FBRSalesTaxReport:
 		if self.filters.from_date > self.filters.to_date:
 			frappe.throw(_("Date Range is incorrect"))
 
-
 	def run(self):
 		self.get_columns()
 		self.get_invoices()
 		self.transform_invoices()
 		return self.columns, self.data
-
 
 	def get_invoices(self):
 		condition = "AND si.customer = %(customer)s" if self.filters.customer else ""
@@ -79,7 +77,6 @@ class FBRSalesTaxReport:
 			invoice.document_type = "Sales Invoice"
 			invoice.uom = "Numbers, pieces, units"
 
-
 			self.invoices_map[invoice.name] = frappe._dict({
 				'invoice': invoice,
 				'items': [],
@@ -112,7 +109,6 @@ class FBRSalesTaxReport:
 				if invoice:
 					invoice.get('taxes').append(tax)
 
-
 	def transform_invoices(self):
 		self.data = []
 		for invoice in self.invoices_map.values():
@@ -136,7 +132,6 @@ class FBRSalesTaxReport:
 			row_fill.extra_tax = flt(extra_tax.tax_amount)
 			row_fill.further_tax = flt(further_tax.tax_amount)
 			self.data.append(row_fill)
-
 
 	def get_columns(self):
 		self.columns = [
@@ -285,4 +280,4 @@ class FBRSalesTaxReport:
 			}
 		]
 		if not self.filters.for_export:
-			self.columns =  list(filter(lambda d: not d.get("hide_for_export"), self.columns))
+			self.columns = list(filter(lambda d: not d.get("hide_for_export"), self.columns))
