@@ -7,7 +7,7 @@ app_description = "ERPNext Pakistan Regional Customization"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
 app_email = "info@paralogic.io"
-app_license = "MIT"
+app_license = "GNU General Public License (v3)"
 
 after_install = "erpnext_pk.install.after_install"
 

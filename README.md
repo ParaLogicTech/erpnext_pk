@@ -33,4 +33,8 @@ Report: "Sales Tax - DSI Domestic Sales Invoices (Annexure C)"
 Please contact us for any support or other inquiries via our website.
 
 ## License
-The MIT License (MIT) 
+GNU/General Public License (see [license.txt](license.txt))
+
+The ERPNext Pakistan code is licensed as GNU General Public License (v3) and the copyright is owned by ParaLogic and Contributors.
+
+By contributing to ERPNext Pakistan App, you agree that your contributions will be licensed under its GNU General Public License (v3).

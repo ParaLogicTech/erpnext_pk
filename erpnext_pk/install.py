@@ -1,3 +1,6 @@
+# Copyright (c) 2022, ParaLogic and contributors
+# For license information, please see license.txt
+
 import frappe
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
 
