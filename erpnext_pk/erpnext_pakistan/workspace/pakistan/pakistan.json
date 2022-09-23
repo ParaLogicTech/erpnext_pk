@@ -18,7 +18,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Test",
+   "label": "Masters",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -26,8 +26,17 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "ERPNext Pakistan Settings",
-   "link_to": "ERPNext Pakistan Settings",
+   "label": "Account",
+   "link_to": "Account",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Company",
+   "link_to": "Company",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -59,10 +68,11 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-16 18:54:26.992562",
+ "modified": "2022-09-23 17:44:40.843094",
  "modified_by": "Administrator",
  "module": "ERPNext Pakistan",
  "name": "Pakistan",
+ "onboarding": "ERPNext Pakistan",
  "owner": "Administrator",
  "pin_to_bottom": 0,
  "pin_to_top": 0,
