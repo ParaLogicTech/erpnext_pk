@@ -1,8 +1,8 @@
 {
  "action": "Create Entry",
- "action_label": "Create Sales Tax Invoice",
+ "action_label": "Create your first Sales Tax Invoice",
  "creation": "2022-09-23 17:52:32.978814",
- "description": "Create a Sales Tax Invoice that should be reflected in the Sales Tax Reports. Make sure to select Sales Taxes and Charges template to include Sales Tax in your invoice.",
+ "description": "Select the relevant Sales Taxes and Charges Template to be calculated in the transaction.",
  "docstatus": 0,
  "doctype": "Onboarding Step",
  "idx": 0,
@@ -11,11 +11,11 @@
  "is_skipped": 0,
  "modified": "2022-09-23 17:57:30.157557",
  "modified_by": "Administrator",
- "name": "Create Sales Tax Invoice",
+ "name": "Create your first Sales Tax Invoice",
  "owner": "Administrator",
  "reference_document": "Sales Invoice",
  "show_form_tour": 0,
  "show_full_form": 1,
- "title": "Create Sales Tax Invoice",
+ "title": "Create your first Sales Tax Invoice",
  "validate_action": 1
 }
