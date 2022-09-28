@@ -11,12 +11,12 @@
  "is_standard": "Yes",
  "modified": "2022-09-19 12:00:47.047241",
  "modified_by": "Administrator",
- "module": "ERPNext Pakistan",
+ "module": "Pakistan Workspace",
  "name": "FBR Sales Tax Report",
  "owner": "Administrator",
  "prepared_report": 0,
  "ref_doctype": "Sales Invoice",
- "report_name": "FBR Sales Tax Report",
+ "report_name": "Domestic Sales Invoices (Annexure C) Tax Report",
  "report_type": "Script Report",
  "roles": [
   {
