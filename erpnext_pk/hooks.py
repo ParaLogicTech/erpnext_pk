@@ -1,9 +1,9 @@
 from . import __version__ as app_version
 
 app_name = "erpnext_pk"
-app_title = "ERPNext Pakistan"
+app_title = "Pakistan Workspace"
 app_publisher = "ParaLogic"
-app_description = "ERPNext Pakistan Regional Customization"
+app_description = "Sales tax reporting and compliance for Pakistan"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
 app_email = "info@paralogic.io"
