@@ -1,7 +1,7 @@
 {
  "add_total_row": 0,
  "columns": [],
- "creation": "2022-09-09 16:47:51.842712",
+ "creation": "2022-09-16 18:54:06.564363",
  "disable_prepared_report": 0,
  "disabled": 0,
  "docstatus": 0,
@@ -9,14 +9,14 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2022-09-28 21:39:20.392225",
+ "modified": "2022-09-28 22:09:05.553332",
  "modified_by": "Administrator",
  "module": "Pakistan Workspace",
- "name": "FBR Sales Tax Report",
+ "name": "Sindh Sales Tax on Services Report",
  "owner": "Administrator",
  "prepared_report": 0,
  "ref_doctype": "Sales Invoice",
- "report_name": "FBR Sales Tax Report",
+ "report_name": "Sindh Sales Tax on Services Report",
  "report_type": "Script Report",
  "roles": [
   {

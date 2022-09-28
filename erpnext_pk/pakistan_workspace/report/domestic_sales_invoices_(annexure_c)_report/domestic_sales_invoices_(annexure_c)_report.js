@@ -2,7 +2,8 @@
 // For license information, please see license.txt
 /* eslint-disable */
 
-frappe.query_reports["SRB Service Tax Report"] = {
+
+frappe.query_reports["Domestic Sales Invoices (Annexure C) Report"] = {
 	"filters": [
 		{
 			"fieldname":"company",

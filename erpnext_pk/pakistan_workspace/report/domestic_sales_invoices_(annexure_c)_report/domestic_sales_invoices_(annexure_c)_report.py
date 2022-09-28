@@ -19,7 +19,7 @@ class FBRSalesTaxReport:
 
 		self.filters.sales_tax_account = frappe.get_cached_value('Company', self.filters.company, "sales_tax_account")
 		self.filters.further_tax_account = frappe.get_cached_value('Company', self.filters.company, "further_tax_account")
-		
+
 		self.filters.tax_accounts = [
 			self.filters.sales_tax_account,
 			self.filters.further_tax_account,
