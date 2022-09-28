@@ -12,24 +12,24 @@
  "is_complete": 0,
  "modified": "2022-09-23 17:59:50.780170",
  "modified_by": "Administrator",
- "module": "ERPNext Pakistan",
- "name": "ERPNext Pakistan",
+ "module": "Pakistan Workspace",
+ "name": "Pakistan Workspace",
  "owner": "Administrator",
  "steps": [
   {
-   "step": "Create Customer With NIC or NTN"
+   "step": "Setup Tax Accounts in Company Master"
   },
   {
-   "step": "Update Sales Tax Accounts In Company"
+   "step": "Create a Customer with tax fields"
   },
   {
-   "step": "Create Sales Tax Invoice"
+   "step": "Create your first Sales Tax Invoice"
   },
   {
-   "step": "View FBR Sales Tax Report"
+   "step": "View and Export FBR compliant Sales Tax Report"
   }
  ],
- "subtitle": "Customizations and features for Pakistani Companies",
- "success_message": "The ERPNext Pakistan app is all set up!",
- "title": "Let's Set Up the ERPNext Pakistan App."
+ "subtitle": "NIC, NTN, STRN and tax compliant reports.",
+ "success_message": "The Pakistan Workspace is all set up for tax compliance",
+ "title": "Let's Set Up the Pakistan Workspace."
 }
