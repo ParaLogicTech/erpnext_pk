@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 
-frappe.query_reports["FBR Sales Tax Report"] = {
+frappe.query_reports["Domestic Sales Invoices (Annexure C) Report"] = {
 	"filters": [
 		{
 			"fieldname":"company",
