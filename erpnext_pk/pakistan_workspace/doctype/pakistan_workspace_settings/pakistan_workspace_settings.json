@@ -17,10 +17,10 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-09-05 18:08:08.884016",
+ "modified": "2022-09-28 21:34:45.407791",
  "modified_by": "Administrator",
- "module": "ERPNext Pakistan",
- "name": "ERPNext Pakistan Settings",
+ "module": "Pakistan Workspace",
+ "name": "Pakistan Workspace Settings",
  "owner": "Administrator",
  "permissions": [
   {

@@ -42,10 +42,11 @@ class FBRSalesTaxReport:
 		condition = "AND si.customer = %(customer)s" if self.filters.customer else ""
 
 		invoices = frappe.db.sql("""
-			SELECT si.name, si.customer, si.posting_date, si.base_net_total,
+			SELECT si.name, si.customer, si.base_net_total,
 				si.tax_nic, si.tax_ntn, si.tax_strn,
 				address_customer.state as destination_province,
-				address_company.state as supplier_province
+				address_company.state as supplier_province,
+				DATE_FORMAT(i.posting_date, '%%d/%%m/%%Y') as posting_date
 			FROM `tabSales Invoice` si
 			LEFT JOIN `tabCustomer` c
 				ON c.name = si.customer
@@ -177,9 +178,9 @@ class FBRSalesTaxReport:
 			},
 			{
 				"label": _("Document Date"),
-				"fieldname": "document_date",
-				"fieldtype": "Date",
-				"width": 120
+				"fieldname": "posting_date",
+				"fieldtype": "Data",
+				"width": 80
 			},
 			{
 				"label": _("HS Code Description"),

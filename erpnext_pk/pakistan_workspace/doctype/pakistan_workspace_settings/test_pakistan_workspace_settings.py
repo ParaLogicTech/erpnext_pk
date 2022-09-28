@@ -4,5 +4,5 @@
 # import frappe
 import unittest
 
-class TestERPNextPakistanSettings(unittest.TestCase):
+class TestPakistanWorkspaceSettings(unittest.TestCase):
 	pass
