@@ -2,7 +2,7 @@
  "action": "Update Settings",
  "action_label": "Setup Tax Accounts in Company Master",
  "creation": "2022-09-23 17:46:51.132966",
- "description": "Tax Accounts are the basis for FBR compliant reporting.",
+ "description": "## Setup Tax Accounts\n\n Tax Accounts are the basis for FBR compliant reporting.",
  "docstatus": 0,
  "doctype": "Onboarding Step",
  "field": "sales_tax_account",
