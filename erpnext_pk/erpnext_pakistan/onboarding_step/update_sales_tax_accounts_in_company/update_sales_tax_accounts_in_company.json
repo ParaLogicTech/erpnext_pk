@@ -1,8 +1,8 @@
 {
  "action": "Update Settings",
- "action_label": "Update Sales Tax Accounts In Company",
+ "action_label": "Setup Tax Accounts in Company Master",
  "creation": "2022-09-23 17:46:51.132966",
- "description": "For the Sales Tax Reports to work, you first need to create and set Sales Tax and Further Tax accounts in the Company master.",
+ "description": "Tax Accounts are the basis for FBR compliant reporting.",
  "docstatus": 0,
  "doctype": "Onboarding Step",
  "field": "sales_tax_account",
@@ -12,12 +12,12 @@
  "is_skipped": 0,
  "modified": "2022-09-23 17:56:12.867979",
  "modified_by": "Administrator",
- "name": "Update Sales Tax Accounts In Company",
+ "name": "Setup Tax Accounts in Company Master",
  "owner": "Administrator",
  "reference_document": "Company",
  "show_form_tour": 0,
  "show_full_form": 0,
- "title": "Update Sales Tax Accounts In Company",
+ "title": "Setup Tax Accounts in Company Master",
  "validate_action": 1,
  "value_to_validate": "%"
 }
