@@ -1,7 +1,7 @@
 {
  "action": "View Report",
  "creation": "2022-09-23 17:53:44.308781",
- "description": "## View and Export FBR compliant Sales Tax Report\n\n FBR compliant reports can be viewed for verification. For bulk upload to eFBR IRIS, select the "For Export" option and then export as Excel or CSV file.",
+ "description": "## View and Export FBR compliant Sales Tax Report\n\n FBR compliant reports can be viewed for verification. For bulk upload to eFBR IRIS, select the 'For Export' option and then export as Excel or CSV file.",
  "docstatus": 0,
  "doctype": "Onboarding Step",
  "idx": 0,
