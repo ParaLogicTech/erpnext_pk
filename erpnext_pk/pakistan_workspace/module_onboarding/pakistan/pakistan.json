@@ -1,0 +1,41 @@
+{
+ "allow_roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Accounts Manager"
+  }
+ ],
+ "creation": "2022-09-30 13:13:03.420406",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "https://github.com/ParaLogicTech/erpnext_pk/",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2022-09-30 13:36:34.430914",
+ "modified_by": "Administrator",
+ "module": "Pakistan Workspace",
+ "name": "Pakistan",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "Create Sales Tax Accounts"
+  },
+  {
+   "step": "Create a Customer with tax numbers"
+  },
+  {
+   "step": "Create Sales Tax Invoice"
+  },
+  {
+   "step": "View Sales Tax Report"
+  }
+ ],
+ "subtitle": "NIC, NTN, STRN numbers, tax accounts and FBR reports.",
+ "success_message": "The Pakistan Workspace is set up for tax compliance!",
+ "title": "Let's Set Up the Pakistan Workspace."
+}

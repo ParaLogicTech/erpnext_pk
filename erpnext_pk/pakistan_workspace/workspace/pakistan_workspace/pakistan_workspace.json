@@ -18,24 +18,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Settings",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Company Tax Accounts",
-   "link_to": "Company",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Reports",
+   "label": "FBR Reports",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -43,7 +26,7 @@
   {
    "hidden": 0,
    "is_query_report": 1,
-   "label": "Domestic Sales Invoices (Annexure C) Report",
+   "label": "Domestic Sales Invoices (Annexure C)",
    "link_to": "Domestic Sales Invoices (Annexure C) Report",
    "link_type": "Report",
    "onboard": 0,
@@ -52,18 +35,53 @@
   {
    "hidden": 0,
    "is_query_report": 1,
-   "label": "Sindh Sales Tax on Services Report",
+   "label": "Sindh Sales Tax on Services",
    "link_to": "Sindh Sales Tax on Services Report",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Company Master",
+   "link_to": "Company",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Taxes and Charges Template",
+   "link_to": "Sales Taxes and Charges Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Tax Template",
+   "link_to": "Item Tax Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2022-09-28 22:17:33.071972",
+ "modified": "2022-09-30 14:01:05.384590",
  "modified_by": "Administrator",
  "module": "Pakistan Workspace",
  "name": "Pakistan Workspace",
- "onboarding": "",
+ "onboarding": "Pakistan",
  "owner": "Administrator",
  "pin_to_bottom": 0,
  "pin_to_top": 0,

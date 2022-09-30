@@ -1,0 +1,23 @@
+{
+ "action": "View Report",
+ "creation": "2022-09-30 13:25:04.684224",
+ "description": "## View and Export FBR compliant Sales Tax Report\n\nFBR compliant reports can be viewed for verification. \n\nSelect the \"For Export\" option and then export as Excel or CSV file. The exported file can be validated for upload to the eFBR IRIS platform.",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 0,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2022-09-30 13:29:40.693143",
+ "modified_by": "Administrator",
+ "name": "View Sales Tax Report",
+ "owner": "Administrator",
+ "reference_report": "Domestic Sales Invoices (Annexure C) Report",
+ "report_description": "Domestic Sales Invoices (Annexure C) Report",
+ "report_reference_doctype": "Sales Invoice",
+ "report_type": "Script Report",
+ "show_form_tour": 0,
+ "show_full_form": 0,
+ "title": "View Sales Tax Report",
+ "validate_action": 1
+}
