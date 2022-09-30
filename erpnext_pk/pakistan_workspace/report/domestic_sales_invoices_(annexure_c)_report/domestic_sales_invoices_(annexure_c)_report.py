@@ -46,7 +46,7 @@ class FBRSalesTaxReport:
 				si.tax_nic, si.tax_ntn, si.tax_strn,
 				address_customer.state as destination_province,
 				address_company.state as supplier_province,
-				DATE_FORMAT(i.posting_date, '%%d/%%m/%%Y') as posting_date
+				DATE_FORMAT(si.posting_date, '%%d/%%m/%%Y') as posting_date
 			FROM `tabSales Invoice` si
 			LEFT JOIN `tabCustomer` c
 				ON c.name = si.customer
