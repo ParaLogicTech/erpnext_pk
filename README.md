@@ -1,40 +1,57 @@
-Pakistan Workspace/Module
-==========================
-ERPNext Workspace/Module for Pakistan, localized with regional custom fields and reports for tax compliance
+ERPNext Workspace for Pakistan ☪️
+=================================
+The Pakistan Workspace is a localization app for [ERPNext](https://github.com/frappe/erpnext) that adds regional custom fields for NIC, NTN, and STRN numbers, and reports for FBR tax compliance.
 
-The Pakistan Workspace is a localization app for ERPNext that adds regional custom fields such as NIC, NTN, and STRN numbers, and reports for FBR tax compliance. The app is available for one-click installation on the Frappe Marketplace, or can be deployed via Bench CLI for self-hosted options.
+## Features 🎁
 
-## Features
 ### 1. NIC, NTN, and STRN numbers
-Custom fields are added to the Customer and Supplier DocTypes with a format input mask and length validation.
+**Custom fields** are added to the Customer, Supplier and Employee DocTypes with a format input mask and length validation.
 
-NIC National Identity Card number (fieldname:tax_nic)
-NTN National Tax Number (fieldname:tax_ntn)
-STRN Sales Tax Registration Number (fieldname:tax_strn)
+- 🪪 **NIC** National Identity Card number (`tax_nic`) 
+- 🧾 **NTN** National Tax Number (`tax_ntn`)
+- 🧾 **STRN** Sales Tax Registration Number (`tax_strn`)
 
-### 2. FBR compliant tax reports
-Report: "Sales Tax - DSI Domestic Sales Invoices (Annexure C)"
+### 2. Tax accounting and reporting 🏦
+**Tax accounts** are added to the Company Master for tax accounting and reporting.
+
+- Sales tax on goods
+- Sales tax on services
+- Further tax
+- Extra tax
+- Sindh Sales tax on services
+
+**Reports** are automatically created for tax compliant sales invoices. Reports can be exported file for validation and upload to the eFBR IRIS platform.
+- DSI Domestic Sales Invoices (Annexure C)
+- SRB Sales Tax on Services
 
 ### 3. Other Features
-- Print formats modified to include NIC, NTN and/or STRN as applicable
+- HR Module: Employee NIC numnber, date of issue and date of expiry.
 
-## Installation Instructions
-1. Frappe Marketplace
-2. Bench CLI
+## Installation 🧑‍💻
+The Pakistan Workspace can be installed via Bench CLI on an active ERPNext site. 
 
-## Roadmap
+```python
+bench get-app https://github.com/ParaLogicTech/erpnext_pk.git
+bench --site [site name] install-app erpnext_pk
+```
 
-## Contributing
-You can fork this repository and create a pull request to contribute code.
+## Roadmap & Wishlist ✨
+- Print formats to include NIC, NTN and/or STRN numbers
+- Sales tax on services for other provinces
+- Witholding tax fields and reporting
+- Automatically add PCT/HS codes and description
+- Reports and compliance for
+	- DPI Domestic Purchase Invoices (Annexure A)
+	- GDI Goods Declaration - Imports (Annexure B)
+	- GDE Goods Declaration - Exports (Annexure D)
+	- Federal Excises (Annexure E)
+	- DCN Debit and Credit Notes (Annexure I)
 
-You can GitHub Wiki pages to contribute documentation.
-
-## Support
+## Support 🤗
 Please contact us for any support or other inquiries via our website https://paralogic.io.
 
-## License
-GNU/General Public License (see [license.txt](license.txt))
+## Contributing 🤝
+You can fork this repository and create a pull request to contribute code. By contributing to ERPNext Pakistan Workspace, you agree that your contributions will be licensed under its GNU General Public License (v3). 
 
-The ERPNext Pakistan code is licensed as GNU General Public License (v3) and the copyright is owned by ParaLogic and Contributors.
-
-By contributing to ERPNext Pakistan App, you agree that your contributions will be licensed under its GNU General Public License (v3).
+## GNU/General Public License 
+The ERPNext Pakistan Workspace code is licensed as GNU General Public License (v3) and the copyright is owned by ParaLogic and Contributors (see [license.txt](license.txt)).
