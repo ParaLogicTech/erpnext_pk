@@ -112,22 +112,43 @@ property_setters = [
 
 
 # Installer
+def before_install():
+	check_if_erpnext_installed()
+
+
 def after_install():
+	from erpnext_pk.setup import after_install
+
+	# Installer Process
 	make_custom_fields()
 	apply_property_setters()
 
+	# Setup Wizard Process
+	after_install()
+
+
+def check_if_erpnext_installed():
+	if "erpnext" not in frappe.get_installed_apps():
+		frappe.throw("Please install ERPNext app first then install Pakistan Workspace app")
+
 
 def make_custom_fields():
+	print("Creating Custom Fields")
+
 	if not frappe.db.exists("DocType", "Employee"):
+		print("Employee DocType does not exists, skipping Employee custom fields")
 		custom_fields.pop('Employee')
 
 	create_custom_fields(custom_fields)
 
 
 def apply_property_setters():
+	print("Applying Property Setters")
+
 	employee_doctype_exists = frappe.db.exists("DocType", "Employee")
 	for arg in property_setters:
 		if arg.get('doctype') == "Employee" and not employee_doctype_exists:
+			print("Employee DocType does not exists, skipping Employee property setters")
 			continue
 
 		frappe.make_property_setter(arg)
