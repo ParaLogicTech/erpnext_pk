@@ -24,16 +24,19 @@ custom_fields = {
 		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_id'}),
 		get_template_field({"fieldname": 'tax_strn', 'insert_after': 'tax_ntn'}),
 		get_template_field({"fieldname": 'tax_nic', 'insert_after': 'tax_strn'}),
+
 		{"label": "Pakistan Tax Settings", "fieldname": "sec_break_tax", "fieldtype": "Section Break",
 			"insert_after": "default_discount_account"},
-		{"label": "Sales Tax Account", "fieldname": "sales_tax_account", "fieldtype": "Link", "options": "Account",
+		{"label": "Sales Tax On Goods Account", "fieldname": "sales_tax_account", "fieldtype": "Link", "options": "Account",
 			"insert_after": "sec_break_tax"},
-		{"label": "Service Tax Account", "fieldname": "service_tax_account", "fieldtype": "Link", "options": "Account",
+		{"label": "Sales Tax On Services Account", "fieldname": "service_tax_account", "fieldtype": "Link", "options": "Account",
 			"insert_after": "sales_tax_account"},
 		{"fieldname": "col_break_tax_1", "fieldtype": "Column Break",
 			"insert_after": "service_tax_account"},
 		{"label": "Further Tax Account", "fieldname": "further_tax_account", "fieldtype": "Link", "options": "Account",
 			"insert_after": "col_break_tax_1"},
+		{"label": "Extra Tax Account", "fieldname": "extra_tax_account", "fieldtype": "Link", "options": "Account",
+			"insert_after": "further_tax_account"},
 	],
 
 	'Customer': [

@@ -19,10 +19,12 @@ class FBRSalesTaxReport:
 
 		self.filters.sales_tax_account = frappe.get_cached_value('Company', self.filters.company, "sales_tax_account")
 		self.filters.further_tax_account = frappe.get_cached_value('Company', self.filters.company, "further_tax_account")
+		self.filters.extra_tax_account = frappe.get_cached_value('Company', self.filters.company, "extra_tax_account")
 
 		self.filters.tax_accounts = [
 			self.filters.sales_tax_account,
 			self.filters.further_tax_account,
+			self.filters.extra_tax_account,
 		]
 		self.filters.tax_accounts = [d for d in self.filters.tax_accounts if d]
 
@@ -117,16 +119,22 @@ class FBRSalesTaxReport:
 			further_tax = [tax for tax in invoice['taxes'] if tax.account_head == self.filters.further_tax_account]
 			further_tax = further_tax[0] if further_tax else frappe._dict()
 
+			extra_tax = [tax for tax in invoice['taxes'] if tax.account_head == self.filters.extra_tax_account]
+			extra_tax = extra_tax[0] if extra_tax else frappe._dict()
+
 			row_fill = invoice.get("invoice")
 			row_fill.buyer_name = row_fill.customer
 			row_fill.document_number = row_fill.name
 			row_fill.document_date = row_fill.posting_date
+
 			row_fill.base_taxable_amount = row_fill.base_net_total
 			row_fill.quantity = sum([item.item_quantity for item in invoice.get('items')])
 			row_fill.rate = flt(sales_tax.rate)
+
 			row_fill.sales_tax = flt(sales_tax.tax_amount)
-			row_fill.extra_tax = 0
 			row_fill.further_tax = flt(further_tax.tax_amount)
+			row_fill.extra_tax = flt(extra_tax.tax_amount)
+
 			self.data.append(row_fill)
 
 	def get_columns(self):
