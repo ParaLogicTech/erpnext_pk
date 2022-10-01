@@ -18,7 +18,6 @@ def get_template_field(args):
 	return df
 
 
-
 # Custom Field Definitions
 custom_fields = {
 	'Company': [
@@ -50,36 +49,53 @@ custom_fields = {
 	],
 
 	'Sales Order': [
-		get_template_field({"fieldname": 'tax_nic', "insert_after": 'tax_id', "fetch_from": "customer.tax_nic", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "read_only": 1, "hidden": 1})
+		get_template_field({"fieldname": 'tax_nic', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_id', "fetch_from": "customer.tax_nic", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'tax_ntn', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_nic',"fetch_from": "customer.tax_ntn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'tax_strn', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0})
 	],
 
 	'Sales Invoice': [
-		get_template_field({"fieldname": 'tax_nic', "insert_after": 'tax_id', "fetch_from": "customer.tax_nic", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "read_only": 1, "hidden": 1})
+		get_template_field({"fieldname": 'tax_nic', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_id', "fetch_from": "customer.tax_nic", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'tax_ntn', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'tax_strn', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0})
 	],
 
 	'Delivery Note': [
-		get_template_field({"fieldname": 'tax_nic', "insert_after": 'tax_id', "fetch_from": "customer.tax_nic", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "read_only": 1, "hidden": 1})
+		get_template_field({"fieldname": 'tax_nic', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_id', "fetch_from": "customer.tax_nic", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'tax_ntn', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'tax_strn', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0})
 	],
 
 	'POS Invoice': [
-		get_template_field({"fieldname": 'tax_nic', "insert_after": 'tax_id', "fetch_from": "customer.tax_nic", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_ntn', "insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "read_only": 1, "hidden": 1}),
-		get_template_field({"fieldname": 'tax_strn', "insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "read_only": 1, "hidden": 1})
+		get_template_field({"fieldname": 'tax_nic', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_id', "fetch_from": "customer.tax_nic", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'tax_ntn', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'tax_strn', "read_only": 1, "hidden": 1,
+			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0})
 	],
 
 	'Employee': [
-		{"label": "National ID Card Detail", "fieldname": "sec_nic_details", "fieldtype": "Section Break", "insert_after": "health_details", "collapsible": 1},
+		{"label": "National ID Card Detail", "fieldname": "sec_nic_details", "fieldtype": "Section Break",
+			"insert_after": "health_details", "collapsible": 1},
 		get_template_field({"fieldname": 'tax_nic', 'insert_after': 'sec_nic_details'}),
-		{"fieldname": "col_break_nic1", "fieldtype": "Column Break", "insert_after": "tax_nic"},
-		{"label": "CNIC Date of Issue", "fieldname": "nic_date_of_issue", "fieldtype": "Date", "insert_after": "col_break_nic1"},
-		{"label": "", "fieldname": "col_break_nic2", "fieldtype": "Column Break", "insert_after": "nic_date_of_issue"},
-		{"label": "CNIC Date of Expiry", "fieldname": "nic_valid_upto", "fieldtype": "Date", "insert_after": "col_break_nic2"}
+		{"fieldname": "col_break_nic1", "fieldtype": "Column Break",
+			"insert_after": "tax_nic"},
+		{"label": "CNIC Date of Issue", "fieldname": "nic_date_of_issue", "fieldtype": "Date",
+			"insert_after": "col_break_nic1"},
+		{"label": "", "fieldname": "col_break_nic2", "fieldtype": "Column Break",
+			"insert_after": "nic_date_of_issue"},
+		{"label": "CNIC Date of Expiry", "fieldname": "nic_valid_upto", "fieldtype": "Date",
+			"insert_after": "col_break_nic2"}
 	],
 }
 
