@@ -13,6 +13,38 @@ further_tax_rate = 3.0
 sales_tax_template_title = "Sales Tax"
 sales_further_tax_template_title = "Sales Tax + Further Tax"
 
+address_template_html = """<div>{{ address_line1 }}</div>
+
+{% if address_line2 %}
+	<div>{{ address_line2 }}</div>
+{% endif -%}
+
+<div>
+{% if city %}{{ city | upper }}{% endif %}
+{% if city and pincode %}-{% endif %}
+{% if pincode %}{{ pincode }}{% endif -%}
+</div>
+
+{% if state %}
+	<div>{{ state }}</div>
+{% endif -%}
+
+{% if country != "Pakistan" %}
+	<div>{{ country | upper }}</div>
+{% endif %}
+
+{% if phone %}
+	<div>Phone: {{ phone }}</div>
+{% endif -%}
+
+{% if fax %}
+	<div>Fax: {{ fax }}</div>
+{% endif -%}
+
+{% if email_id %}
+	<div>Email: {{ email_id }}</div>
+{% endif -%}"""
+
 
 def get_setup_stages(args=None):
 	stages = [
@@ -32,6 +64,7 @@ def stage_install_pakistan_workspace(args):
 	rename_gst_account_for_pakistan()
 	rename_pakistan_tax_template_for_pakistan()
 
+	update_address_template()
 	update_sales_tax_description()
 
 	create_further_tax_accounts_for_pakistan()
@@ -42,11 +75,7 @@ def stage_install_pakistan_workspace(args):
 
 # This installer method is for existing database
 def after_install():
-	# Do not rename for existing database
-	# rename_gst_account_for_pakistan()
-	# rename_pakistan_tax_template_for_pakistan()
-	# update_sales_tax_description()
-
+	# Do not rename or modify existing records for existing database
 	create_further_tax_accounts_for_pakistan()
 	create_tax_templates_for_pakistan()
 
@@ -184,6 +213,19 @@ def update_company_tax_accounts(company):
 		company_doc.further_tax_account = further_tax_account
 
 		company_doc.save()
+
+
+def update_address_template():
+	address_template = frappe.db.get_value("Address Template", {'is_default': 1})
+
+	if not address_template:
+		address_template = frappe.get_all("Address Template")
+		if address_template:
+			address_template = address_template[0]
+
+	if address_template:
+		print("Updating Address Template")
+		frappe.db.set_value("Address Template", address_template, 'template', address_template_html)
 
 
 def get_sales_tax_account(company):
