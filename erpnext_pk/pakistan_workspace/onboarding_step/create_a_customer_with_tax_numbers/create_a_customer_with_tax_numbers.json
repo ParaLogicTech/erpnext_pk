@@ -8,13 +8,13 @@
  "is_complete": 0,
  "is_single": 0,
  "is_skipped": 0,
- "modified": "2022-09-30 13:31:19.517968",
+ "modified": "2022-10-02 13:19:48.815749",
  "modified_by": "Administrator",
  "name": "Create a Customer with tax numbers",
  "owner": "Administrator",
  "reference_document": "Customer",
  "show_form_tour": 0,
- "show_full_form": 0,
+ "show_full_form": 1,
  "title": "Create a Customer with tax numbers",
  "validate_action": 1
 }

@@ -8,13 +8,13 @@
  "is_complete": 0,
  "is_single": 0,
  "is_skipped": 0,
- "modified": "2022-09-30 13:20:56.779338",
+ "modified": "2022-10-02 13:18:50.175431",
  "modified_by": "Administrator",
  "name": "Create Sales Tax Invoice",
  "owner": "Administrator",
  "reference_document": "Sales Invoice",
  "show_form_tour": 0,
- "show_full_form": 0,
+ "show_full_form": 1,
  "title": "Create your first Sales Tax Invoice",
  "validate_action": 1
 }

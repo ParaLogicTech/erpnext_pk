@@ -1,14 +1,15 @@
 {
- "action": "Create Entry",
+ "action": "Update Settings",
  "creation": "2022-09-30 13:12:59.391610",
  "description": "## Setup Sales Tax Accounts\n\nSales Tax Accounts are the basis for FBR tax compliance and reporting. The following accounts are required:\n\n1. Sales tax on goods\n2. Sales tax on services\n3. Further tax\n4. Extra tax\n\n### Add your registration numbers to Company Master\n\nAdd your company NIC number or NTN and STRN numbers.",
  "docstatus": 0,
  "doctype": "Onboarding Step",
+ "field": "sales_tax_account",
  "idx": 0,
  "is_complete": 0,
  "is_single": 0,
  "is_skipped": 0,
- "modified": "2022-09-30 13:36:08.754969",
+ "modified": "2022-10-02 13:17:16.547721",
  "modified_by": "Administrator",
  "name": "Create Sales Tax Accounts",
  "owner": "Administrator",
@@ -16,5 +17,6 @@
  "show_form_tour": 0,
  "show_full_form": 0,
  "title": "Create Sales Tax Accounts in Company Master",
- "validate_action": 1
+ "validate_action": 1,
+ "value_to_validate": "%"
 }
