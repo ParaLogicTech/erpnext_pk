@@ -13,7 +13,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "label": "Pakistan Workspace",
+ "label": "Pakistan",
  "links": [
   {
    "hidden": 0,
@@ -77,10 +77,10 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-30 14:01:05.384590",
+ "modified": "2022-10-03 16:03:54.601198",
  "modified_by": "Administrator",
  "module": "Pakistan Workspace",
- "name": "Pakistan Workspace",
+ "name": "Pakistan",
  "onboarding": "Pakistan",
  "owner": "Administrator",
  "pin_to_bottom": 0,
