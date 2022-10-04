@@ -1,4 +1,4 @@
-<div align="center">
+<div>
 	<img src="https://raw.githubusercontent.com/ParaLogicTech/erpnext_pk/master/erpnext_pk/public/images/erpnext-pk-logo.png" height="128">
 </div>
 
