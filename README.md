@@ -1,7 +1,7 @@
 <div align="center">
-	<img src="https://raw.githubusercontent.com/ParaLogicTech/erpnext_pk/master/erpnext_pk/public/images/erpnext-pk-logo.png" height="128">
 	<h2>ERPNext Workspace for Pakistan ☪️</h2>
-</div>
+	<img src="https://raw.githubusercontent.com/abid-omar/erpnext_pk/master/erpnext_pk/public/images/erpnext-pk-banner.png" height="200">
+	</div>
 
 The Pakistan Workspace is a localization app for [ERPNext](https://github.com/frappe/erpnext) that adds regional custom fields for NIC, NTN, and STRN numbers, and reports for FBR tax compliance.
 
@@ -21,7 +21,6 @@ The Pakistan Workspace is a localization app for [ERPNext](https://github.com/fr
 - Sales tax on services
 - Further tax
 - Extra tax
-- Sindh Sales tax on services
 
 **Reports** are automatically created for tax compliant sales invoices. Reports can be exported file for validation and upload to the eFBR IRIS platform.
 - DSI Domestic Sales Invoices (Annexure C)
@@ -29,6 +28,8 @@ The Pakistan Workspace is a localization app for [ERPNext](https://github.com/fr
 
 ### 3. Other Features
 - HR Module: Employee NIC numnber, date of issue and date of expiry.
+
+<img src="https://raw.githubusercontent.com/abid-omar/erpnext_pk/master/erpnext_pk/public/images/erpnext-pk-screenshot.png">
 
 ## Installation 🧑‍💻
 The Pakistan Workspace can be installed via Bench CLI on an active ERPNext site. 
