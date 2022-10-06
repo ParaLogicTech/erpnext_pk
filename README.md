@@ -1,6 +1,6 @@
 <div align="center">
 	<h2>ERPNext Workspace for Pakistan ☪️</h2>
-	<img src="https://raw.githubusercontent.com/abid-omar/erpnext_pk/master/erpnext_pk/public/images/erpnext-pk-banner.png" height="200">
+	<img src="https://raw.githubusercontent.com/abid-omar/erpnext_pk/master/erpnext_pk/public/images/erpnext-pk-banner.png">
 	</div>
 
 The Pakistan Workspace is a localization app for [ERPNext](https://github.com/frappe/erpnext) that adds regional custom fields for NIC, NTN, and STRN numbers, and reports for FBR tax compliance.
