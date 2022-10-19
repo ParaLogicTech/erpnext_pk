@@ -11,6 +11,8 @@ def get_template_field(args):
 		'tax_ntn': {"label": "NTN", "fieldname": "tax_ntn", "fieldtype": "Data", "in_standard_filter": 1},
 		'tax_strn': {"label": "STRN", "fieldname": "tax_strn", "fieldtype": "Data", "in_standard_filter": 1},
 		'tax_nic': {"label": "CNIC", "fieldname": "tax_nic", "fieldtype": "Data", "in_standard_filter": 1},
+		'company_tax_ntn': {"label": "Company NTN", "fieldname": "company_tax_ntn", "fieldtype": "Data", "in_standard_filter": 1},
+		'company_tax_strn': {"label": "Company STRN", "fieldname": "company_tax_strn", "fieldtype": "Data", "in_standard_filter": 1},
 	}
 	fieldname = args['fieldname']
 	df = custom_field_templates[fieldname].copy()
@@ -57,7 +59,11 @@ custom_fields = {
 		get_template_field({"fieldname": 'tax_ntn', "read_only": 1, "hidden": 1,
 			"insert_after": 'tax_nic',"fetch_from": "customer.tax_ntn", "in_standard_filter": 0}),
 		get_template_field({"fieldname": 'tax_strn', "read_only": 1, "hidden": 1,
-			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0})
+			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'company_tax_ntn', "read_only": 1, "hidden": 1,
+			"insert_after": 'company', "fetch_from": "company.tax_ntn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'company_tax_strn', "read_only": 1, "hidden": 1,
+			"insert_after": 'company_tax_ntn', "fetch_from": "company.tax_strn", "in_standard_filter": 0})
 	],
 
 	'Sales Invoice': [
@@ -66,7 +72,11 @@ custom_fields = {
 		get_template_field({"fieldname": 'tax_ntn', "read_only": 1, "hidden": 1,
 			"insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "in_standard_filter": 0}),
 		get_template_field({"fieldname": 'tax_strn', "read_only": 1, "hidden": 1,
-			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0})
+			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'company_tax_ntn', "read_only": 1, "hidden": 1,
+			"insert_after": 'company', "fetch_from": "company.tax_ntn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'company_tax_strn', "read_only": 1, "hidden": 1,
+			"insert_after": 'company_tax_ntn', "fetch_from": "company.tax_strn", "in_standard_filter": 0})
 	],
 
 	'Delivery Note': [
@@ -75,7 +85,11 @@ custom_fields = {
 		get_template_field({"fieldname": 'tax_ntn', "read_only": 1, "hidden": 1,
 			"insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "in_standard_filter": 0}),
 		get_template_field({"fieldname": 'tax_strn', "read_only": 1, "hidden": 1,
-			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0})
+			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'company_tax_ntn', "read_only": 1, "hidden": 1,
+			"insert_after": 'company', "fetch_from": "company.tax_ntn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'company_tax_strn', "read_only": 1, "hidden": 1,
+			"insert_after": 'company_tax_ntn', "fetch_from": "company.tax_strn", "in_standard_filter": 0})
 	],
 
 	'POS Invoice': [
@@ -84,7 +98,11 @@ custom_fields = {
 		get_template_field({"fieldname": 'tax_ntn', "read_only": 1, "hidden": 1,
 			"insert_after": 'tax_nic', "fetch_from": "customer.tax_ntn", "in_standard_filter": 0}),
 		get_template_field({"fieldname": 'tax_strn', "read_only": 1, "hidden": 1,
-			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0})
+			"insert_after": 'tax_ntn', "fetch_from": "customer.tax_strn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'company_tax_ntn', "read_only": 1, "hidden": 1,
+			"insert_after": 'company', "fetch_from": "company.tax_ntn", "in_standard_filter": 0}),
+		get_template_field({"fieldname": 'company_tax_strn', "read_only": 1, "hidden": 1,
+			"insert_after": 'company_tax_ntn', "fetch_from": "company.tax_strn", "in_standard_filter": 0})
 	],
 
 	'Employee': [
